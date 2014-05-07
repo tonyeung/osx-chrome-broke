@@ -1,0 +1,56 @@
+<div id="loginTemplate" class="container">
+    <script type="text/ng-template" id="chooseLocation.html">
+        <div class="modal-header">
+            <h4 class="modal-title">Choose your location</h4>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="chooseLocation-name" class="col-sm-1 control-label">Location</label>
+                    <div class="col-sm-10">
+                        <input id="chooseLocation-name"
+                               name="chooseLocation-name"
+                               class="form-control"
+                               placeholder="Enter your location code"
+                               ng-model="location.name" />
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+            <button name="chooseLocation-submit" id="chooseLocation-submit" type="button" class="btn btn-info" data-ng-click="submit()">Submit</button>
+        </div>
+    </script>
+
+    <header>
+        <h2>Login</h2>
+    </header>
+
+    <div id="main-content" class="well light clearfix">
+        <p id="loginFailed" class="text-warning" ng-show="loginFailed">
+            Invalid login info! Please contact your manager or contact ams tech support.
+        </p>
+
+        <form ng-submit="login()">
+
+            <div class="form-group">
+                <label for="username" class="sr-only">Username</label>
+                <input id="username" name="username" class="form-control" autofocus="" placeholder="username" ng-model="credentials.Username" required />
+            </div>
+            <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+                <input id="password" type="password" name="password" class="form-control" placeholder="password" ng-model="credentials.Password" required />
+            </div>
+            <div class="form-group">
+                <label for="location" class="sr-only">Dealer Code</label>
+                <input id="location" name="location" class="form-control" placeholder="dealer code" ng-model="credentials.DealerCode" required />
+            </div>
+            <div class="pull-right">
+                <input class="btn btn-primary" value="Sign in" id="login-btn" type="submit">
+            </div>
+        </form>
+
+    </div>
+</div>
